@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="musmus.css">
+<meta charset="UTF-8">
+<title>Musian Facts that EVERYONE should know</title>
+<h1>Musian Facts that EVERYONE should know</h1>
+</head>
+<body>
+<h2>Hey guys!</h2>
+<p>What’s up? Musa Ali here, aka. The Ultimate Musa, The Best of All Time, Joji and MusMus. Today, I will be showing you the most accurate facts of all time, and stuff you should never believe in. So pay very close attention, fully agree to these facts and tell others or I will spank you. So feast your corneas!</p>
+<h2>What is true (guaranteed to earn $1M!)</h2>
+<ul>
+<li>Musa Ali is the best human in the universe and no one can beat him.</li>
+<li>Musa is required to be given $1T by each living creature in the universe.</li>
+<li>Musa doesn’t have a video game console.</li>
+<li>Musa has the greatest parents of all time.</li>
+<li>Musa is Muslim.</li>
+<li>أشهد أن لا إله إلا الله و أشهد أن محمداً رسول الله (copy this Arabic writing and paste it in a translator)</li>
+<li>Band is better than orchestra.</li>
+</ul>
+<p>Alright! You read my facts. Now you better agree to them or else…</p>
+<button onclick="ImAboutToRollInDough()">I agree to these facts and will start following them</button>
+<div id="bankVault">
+<h2 id="header">GETTING TRANSACTION READY...</h2>
+<div id="progressContainer">
+<div id="progressBar"></div>
+</div>
+<p id="status">Connecting...</p>
+<p id="amount">You need to owe $1,000,000,000,000.</p>
+</div>
+<script>
+function ImAboutToRollInDough() {
+const vault = 
+document.getElementById('bankVault');
+const bar =
+document.getElementById('progressBar');
+const status =
+document.getElementById('status')
+const amountText =
+document.getElementById('amount')
+vault.style.display = 'block';
+let progress = 0;
+let money = 0;
+let timer = setInterval(() => 
+{
+if (progress >= 100){
+clearInterval(timer);
+status.innerText = "TRANSACTION COMPLETE. YOU ARE NOW IN DEBT.";
+document.getElementById('header').innerText = "Got your money!";
+alert("Thanks for the money! By clicking that button, you paid me a trillion dollars, also agreeing to all the Musian Rules.");
+} else {
+progress += 1;
+bar.style.width = progress + "%";
+if (progress == 20)
+status.innerText = "Bypassing Firewall...";
+if (progress == 50)
+status.innerText = "Detecting Fingerprint Of The Person So We Can Download Their Credit Card Data..."
+if (progress == 80)
+status.innerText = "Transferring into funds...";
+money += 1000000000;
+amountText.innerText = "$" + money.toLocaleString() + " /$1,000,000,000,000";
+}
+}, 100);
+}
+</script>
+<button id="YouSuck">I don’t agree to these facts and I think Musa sucks</button>
+<div id="choiceBox" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:black; color:gold; padding:40px; border:5px solid gold; text-align:center; z-index:1000; font-family: 'Courier New', monospace; box-shadow: 0 0 50px red;">    
+    <h2 style="color:red;">!!! DISRESPECT DETECTED !!!</h2>
+    <p>Ya made a big mistake.<br>There is no escape. Choose your fate:</p>   
+    <br>  
+    <button id="optionA" style="margin:5px; background:white; color:black;">I'M SORRY (Follow rules & Pay $1T)</button>
+    <button id="optionB" style="margin:5px; background:white; color:black;">RUN AWAY</button>
+    <button id="optionC" style="margin:5px; background:white; color:black;">FIGHT!!!</button>
+    <button id="optionD" style="margin:5px; background:darkorchid; color:white;">What fate, you imbecile?</button>
+</div>
+<script>
+// 1. Setup the variables
+const suckBtn = document.getElementById('YouSuck');
+const choiceBox = document.getElementById('choiceBox');
+
+// 2. Open the menu when the main button is clicked
+suckBtn.onclick = function() {
+    choiceBox.style.display = "block";
+};
+
+// --- OPTION A: THE TRICK ---
+document.getElementById('optionA').onclick = function() {
+    choiceBox.style.display = "none";
+    alert("Apology accepted. The Trillion Dollar transfer has been resumed.");
+    ImAboutToRollInDough(); // Calls your money-stealing function
+};
+
+// --- OPTION B: THE GHOST ---
+document.getElementById('optionB').onclick = function() {
+    choiceBox.style.display = "none";
+    document.body.innerHTML = "<h1 style='background:black; color:red; text-align:center; margin-top:20%; font-family:monospace; font-size:268px;'>WHO ARE YOU RUNNING FROM?</h1>";
+    setTimeout(() => { location.reload(); }, 3000);
+};
+
+// --- OPTION C: THE BATTLE ---
+document.getElementById('optionC').onclick = function() {
+    choiceBox.style.display = "none";   document.body.style.backgroundColor = "papayawhip";
+    alert("BATTLE INITIATED. Musa uses his gun! Your HP: 100. Your PP: 50. Enemy HP: 300.");
+    setTimeout(() => { 
+        alert("He got you in the heart! You have 0 HP! You lost!");
+        location.reload(); 
+    }, 2000);
+};
+document.getElementById('optionD').onclick = function() {
+    choiceBox.style.display = "none";
+    alert("An imbecile? Let's see your computer handle THIS!");
+    const allText = document.querySelectorAll('p, h1, h2, li');
+    allText.forEach(el => {
+        el.innerText = "MUSA IS THE BEST";
+        el.style.color = "purple";
+        el.style.fontWeight = "bold";
+    });
+    setTimeout(() => { 
+        alert("Much better. Now read the facts again."); 
+    }, 2000);
+};
+</script>
+</body>
+</html>

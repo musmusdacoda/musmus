@@ -1,0 +1,56 @@
+
+body {
+background-color: PapayaWhip;
+border: 2px solid Gray;
+border-radius: 16px;
+font-family: 'Courier New', Courier, monospace;
+margin-left: 24px;
+margin-right: 24px;
+max-width: 1024px;
+min-width: 256px;
+padding-top: 8px;
+padding-bottom: 24px;
+padding-left: 8px;
+padding-right: 8px;
+}
+button {
+background: Black;
+font-family: 'Courier New', Courier, monospace;
+font-size: 24px;
+color: Gold;
+padding: 12px 24px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+transition: transform 0.2s;
+}
+#bankVault {
+    display: none; /* Stays hidden until the prank starts */
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 3px solid #ffd700;
+    background: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#progressContainer {
+    width: 100%;
+    background-color: #333;
+    border: 1px solid #555;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 25px;
+    background-color: #00ff00;
+    transition: width 0.1s;
+}
+html {
+background: radial-gradient(circle, Yellow, Yellow 50%, Gold 50%, Yellow);
+background-size: 8px 8px;
+}
