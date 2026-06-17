@@ -11,6 +11,7 @@
     <ul>
       <li><a href="index.html">Rules</a></li>
 <li><a href="creations.html">My Creations</a>
+  <li><a href="server.html">My Server</a></li>
     </ul>
   </nav>
 <h2>Hey guys!</h2>
@@ -24,10 +25,7 @@
 <li>Musa is Muslim.</li>
 <li>أشهد أن لا إله إلا الله و أشهد أن محمداً رسول الله (copy this Arabic writing and paste it in a translator)</li>
 <li>Band is better than orchestra.</li>
-<li>Iran does not deserve to be invaded and will conquer the US Inshallah 🇮🇷🇮🇷🇮🇷</li>
-<li>TRUMP SUCKS!!!😡😡😡👎👎👎🇺🇸</li>
-<li>GEORGE W BUSH SUCKS!!!😡😡😡👎👎👎🇺🇸</li>
-<li>NETAHEYU SUCKS!!!😡😡😡👎👎👎🇮🇱</li>
+<li>You must join my Minecraft server (look in the nav bar!)</li>
 </ul>
 <p>Alright! You read my facts. Now you better agree to them or else…</p>
 <button onclick="ImAboutToRollInDough()">I agree to these facts and will start following them</button>
@@ -130,6 +128,66 @@ document.getElementById('optionD').onclick = function() {
         alert("Much better. Now read the facts again."); 
     }, 2000);
 };
+</script>
+<div id="exitModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 99999; align-items: center; justify-content: center;">
+  <div style="background: white; padding: 30px; border-radius: 12px; width: 90%; max-width: 380px; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+    <h2>🔒 Enter Password to Close Tab</h2>
+    <p style="margin: 15px 0;">You need the correct password to leave this page.</p>
+    
+    <input type="password" id="exitPassword" placeholder="Password" style="width: 100%; padding: 12px; font-size: 16px; margin: 10px 0;">
+    
+    <div style="margin-top: 15px;">
+      <button onclick="checkExitPassword()" style="padding: 12px 25px; font-size: 16px; margin: 0 5px;">Submit</button>
+      <button onclick="cancelExit()" style="padding: 12px 25px; font-size: 16px; background: #ddd; margin: 0 5px;">Cancel</button>
+    </div>
+    
+    <p id="exitError" style="color: red; margin-top: 10px; min-height: 20px;"></p>
+  </div>
+</div>
+<script>
+// ================== CHANGE THIS ==================
+const correctPassword = "musmusAbdulhadi";   // ← Your password here
+// ================================================
+
+let isAllowedToLeave = false;
+
+function showExitModal() {
+  document.getElementById('exitModal').style.display = 'flex';
+  document.getElementById('exitPassword').focus();
+}
+
+function checkExitPassword() {
+  const input = document.getElementById('exitPassword').value;
+  const error = document.getElementById('exitError');
+
+  if (input === correctPassword) {
+    isAllowedToLeave = true;
+    window.close();                    // Try to close the tab
+    // Fallback if window.close() doesn't work (most cases)
+    window.location.href = "about:blank";
+  } else {
+    error.textContent = "Wrong password. Try again.";
+    document.getElementById('exitPassword').value = "";
+    document.getElementById('exitPassword').focus();
+  }
+}
+
+function cancelExit() {
+  document.getElementById('exitModal').style.display = 'none';
+  document.getElementById('exitError').textContent = "";
+  document.getElementById('exitPassword').value = "";
+}
+
+// Main protection - triggers when trying to close tab, refresh, or navigate away
+window.addEventListener('beforeunload', function(e) {
+  if (isAllowedToLeave) return;
+
+  e.preventDefault();
+  e.returnValue = "Are you sure you want to leave?";
+  
+  showExitModal();   // Show your custom password modal
+  return "Are you sure you want to leave?";
+});
 </script>
 </body>
 </html>
