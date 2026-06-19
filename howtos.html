@@ -17,6 +17,30 @@
     </ul>
   </nav>
   <p>Hey guys! Making a video on my YT channel takes a lot of work, so I figured I can write on my website first!</p>
+  <h2>How To Set Up a Minecraft Server on macOS</h2>
+  <ol>
+    <li>Download and install the latest version of Java.</li>
+    <li>Download the Minecraft server.jar file from the official Minecraft website. If you don't want to make a Vanilla server (instead something like Bukkit, Paper, Spigot, Fabric), just follow the steps that the other versions tell you.</li>
+    <li>Make a new folder and put the server.jar file inside.</li>
+    <li>Open TextEdit and create a new file.</li>
+    <li>Once in it, go to "Format" at the top of the screen and click "Make Plain Text".</li>
+    <li>Copy and paste into the file the next three lines:<br>#!/bin/bash<br>cd "$(dirname "$0")"<br>java -Xmx2G -jar server.jar nogui<br>(set "server.jar to whatever it's called)</li>
+    <li>Save it as "start.command" in your server folder.</li>
+    <li>Double click it. It will launch, then instantly fail. This is normal. Meanwhile, it created some folders and a eula.txt file in the server folders. Open eula.txt.</li>
+    <li>In the file, look for the line that says "eula=false". Set it to true and save it.</li>
+    <li>Try running it again. It will now create every single file needed.</li>
+    <li>You're done! If you want to change the settings and display of your server, go to the server.properties file and change the stuff. But for now, it's only available to the people on your WiFi. See how to port forward a bit below!</li>
+  </ol>
+  <h2>How To Let Bedrock Players On Your Minecraft Server</h2>
+  <ol>
+    <li>We're going to download a plugin/mod called Geyser for our server. First, go to geysermc.org and go to the "Downloads" section.</li>
+    <li>Download the Geyser and Floodgate files for your server. If your type isn't there or is a vanilla server, this tutorial is useless for you!</li>
+    <li>Stop your server, put the downloaded files in your mods/plugins folder of your server, then start it again. This will generate configuration files.</li>
+    <li>Stop the server again and go to the Floodgate configuration folder and copy and paste a file called "key.pem" into the Geyser configuration folder.</li>
+    <li>Once done, open the config.yml in the Geyser folder.</li>
+    <li>Under the "bedrock" section, make sure "clone-remote-port" is set to false. Under "java", set the "auth-type" to "floodgate".</li>
+    <li>Save it. and start the server. Now you're done, and Bedrock players can join!</li>
+  </ol>
   <h2>How To Port Forward Your Minecraft Server on macOS (plus Geyser!)</h2>
   <ol>
     <li>Go to System Preferences</li>
@@ -35,7 +59,18 @@
     <li>Anyways, set the WAN name to the one that your IPv4 address was located in WAN settings.</li>
     <li>Save the rule. If you run Geyser, make a second rule, the same as the first, but the ports are the ones you find in your config.yml.</li>
     <li>Go to a website like mcsrvstat.us and enter the public IP address/DNS and port number. However, a more accurate example is canyouseeme.org. But this example anly shows TCP ports. Look on the web for a UDP port checker.</li>
-    <li>Now, you can give your friends your public IP address and the port number to join! If you don't want to give your location though, you can asssign a DNS, which I will show next!</li>
+    <li>Now, you can give your friends your public IP address/DNS and the port number to join! If you don't want to give your location though, you can asssign a DNS, which I will show next!</li>
+  </ol>
+  <h2>How To Set Up a DNS for Your Minecraft Server for free using Dynu</h2>
+  <ol>
+    <li>Go to dynu.com and sign up for a free account.</li>
+    <li>Go to "DDNS Services" and click on "Add".</li>
+    <li>Enter a hostname, then choose and ending from "Top Level". It will probably look like hostname.endingtld.tld.</li>
+    <li>Set the IPv4 address to your public IP address. DO NOT enter anything for IPv6.</li>
+    <li>Set "Wildcard IPv6 Alias", "Enable IPv6 Address" and "Wildcard IPv4 Alias" to off.</li>
+    <li>Save the record.</li>
+    <li>To test, open Terminal and run the command "nslookup your-hostname.tld.tld." (change "your-hostname.tld.tld" to your actual hostname).</li>
+    <li>If it says something like "Server: [Your Default Gateway], Name: [your DNS], IP Address: [your Public IP Address]" then your DNS is working and your friends can enter your server without figuring your location!</li>
   </ol>
 </body>
 </html>
