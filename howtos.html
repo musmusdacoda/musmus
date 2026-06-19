@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="musmus.css">
+<meta charset="UTF-8">
+<title>How Tos</title>
+</head>
+<body>
+<h1>How Tos</h1>
+<nav>
+    <ul>
+      <li><a href="index.html">Rules</a></li>
+<li><a href="creations.html">My Creations</a>
+  <li><a href="server.html">My Server</a></li>
+  <li><a href="howtos.html">How Tos</a></li>
+  <li><a href="announcements.html">Announcements</a></li>
+    </ul>
+  </nav>
+  <p>Hey guys! Making a video on my YT channel takes a lot of work, so I figured I can write on my website first!</p>
+  <h2>How To Port Forward Your Minecraft Server on macOS (plus Geyser!)</h2>
+  <ol>
+    <li>Go to System Preferences</li>
+    <li>Click on "Network"</li>
+    <li>You can turn off your firewall completely if you like, but otherwise, click on "Options". You will see a list of applications and files.</li>
+    <li>Click the "+" button to add a new rule</li>
+    <li>If you run your server on Terminal, look for the application in Applications > Utilities. You also have to allow java (you need java installed). Click Cmd + Shift + G and type in "Library/Java/JavaVirtualMachines". Set them both to "Allow incoming connections".</li>
+    <li>Open Terminal and run "netstat -nr". Look for the IP address that is next to the word "default". Note it down.</li>
+    <li>Then, type in "ipconfig getifaddr en0" (change to en1 if you use ethernet). Note the number it shows down. This is your Internal IP Address.</li>
+    <li>Open Safari and enter the Default Gateway. This will take you to your router's admin panel.</li>
+    <li>Login.</li>
+    <li>Find the Port Forwarding section (depending on your interface; it might be under "Advanced" or be called "IPv4 Port Mapping". DON'T CHOOSE IPv6!)</li>
+    <li>Add a new rule.</li>port 25565 
+    <li>Enter a name, enter the Internal IP Address where it asks, set the protocol to TCP/UDP, and finally, set the internal/external ports to your port number in your server.properties file.</li>
+    <li><strong>BUT WAIT! ONE PRECAUTION... CGNAT (Carrier-Grade NAT)!</strong> If you have it on your router, port forwarding is impossible. To check, look at the WAN settings and check the IPv4 section. If there is an IP address, note it down. It is your public IP. Then, search "what is my ip" and check the IPv4 section. If it's a totally different address, you are unfortunately behind CGNAT. But if it's the same, you are fine!</li>
+    <li>Anyways, set the WAN name to the one that your IPv4 address was located in WAN settings.</li>
+    <li>Save the rule. If you run Geyser, make a second rule, the same as the first, but the ports are the ones you find in your config.yml.</li>
+    <li>Go to a website like mcsrvstat.us and enter the public IP address/DNS and port number. However, a more accurate example is canyouseeme.org. But this example anly shows TCP ports. Look on the web for a UDP port checker.</li>
+    <li>Now, you can give your friends your public IP address and the port number to join! If you don't want to give your location though, you can asssign a DNS, which I will show next!</li>
+  </ol>
+</body>
+</html>
