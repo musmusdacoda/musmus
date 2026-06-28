@@ -17,6 +17,11 @@
     </ul>
   </nav>
   <p>Hey guys! Making a video on my YT channel takes a lot of work, so I figured I can write on my website first!</p>
+  <h2>How to get Java on your computer</h2>
+  <ol>
+    <li>Download the latest JRE installer.</li>
+    <li>Download the latest JDK installer (there are actually many, but I prefer Azul Zulu) if needed, like running Minecraft servers. You're done!</li>
+  </ol>
   <h2>How To Set Up a Minecraft Server on macOS</h2>
   <ol>
     <li>Download and install the latest version of Java.</li>
@@ -55,7 +60,7 @@
     <li>Find the Port Forwarding section (depending on your interface; it might be under "Advanced" or be called "IPv4 Port Mapping". DON'T CHOOSE IPv6!)</li>
     <li>Add a new rule.</li>port 25565 
     <li>Enter a name, enter the Internal IP Address where it asks, set the protocol to TCP/UDP, and finally, set the internal/external ports to your port number in your server.properties file.</li>
-    <li><strong>BUT WAIT! ONE PRECAUTION... CGNAT (Carrier-Grade NAT)!</strong> If you have it on your router, port forwarding is impossible. To check, look at the WAN settings and check the IPv4 section. If there is an IP address, note it down. It is your public IP. Then, search "what is my ip" and check the IPv4 section. If it's a totally different address, you are unfortunately behind CGNAT. But if it's the same, you are fine!</li>
+    <li><strong>BUT WAIT! ONE PRECAUTION... CGNAT (Carrier-Grade NAT)!</strong> If you have it on your router, port forwarding is impossible. To check, look at the WAN settings and check the IPv4 section. If there is an IP address, note it down. It is your public IP. Then, search "what is my ip" and check the IPv4 section. If it's a totally different address, you are unfortunately behind CGNAT. But if it's the same, you are fine! There is another playit.gg tutorial if you have CGNAT, travelling between countries, or just not worth the hassle to make those rules.</li>
     <li>Anyways, set the WAN name to the one that your IPv4 address was located in WAN settings.</li>
     <li>Save the rule. If you run Geyser, make a second rule, the same as the first, but the ports are the ones you find in your config.yml.</li>
     <li>Go to a website like mcsrvstat.us and enter the public IP address/DNS and port number. However, a more accurate example is canyouseeme.org. But this example anly shows TCP ports. Look on the web for a UDP port checker.</li>
@@ -71,6 +76,11 @@
     <li>Save the record.</li>
     <li>To test, open Terminal and run the command "nslookup your-hostname.tld.tld." (change "your-hostname.tld.tld" to your actual hostname).</li>
     <li>If it says something like "Server: [Your Default Gateway], Name: [your DNS], IP Address: [your Public IP Address]" then your DNS is working and your friends can enter your server without figuring your location!</li>
+  </ol>
+  <h2>How To Set Up Playit.gg on macOS</h2>
+  <p><strong>DISCLAIMER:</strong> Playit doesn't make builds for macOS anymore. Instead, we will use a different application called Docker.</p>
+  <ol>
+    <li>First, install Docker Desktop for macOS on the official Docker website.</li>
   </ol>
 </body>
 </html>
